@@ -34,7 +34,7 @@ define(
                 return {
                     'method': this.item.method,
                     'additional_data': {
-                        'bankowner': $('#banktransfer_bankowner').val(),
+                        'bankowner': '',
                         'transaction_result': this.transactionResult(),                        
                     }
                 };

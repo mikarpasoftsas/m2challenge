@@ -16,9 +16,8 @@
     </div>
 
     <div class="payment-method-content">
-            <p data-bind="html: getInstructions()"></p>
-            <fieldset data-bind="attr: {class: 'fieldset payment items allbank ' + getCode(), id: 'payment_form_' + getCode()}">
-            <div class="field _required">
+        <p data-bind="html: getInstructions()"></p>           
+        <div class="field _required">
                 <label data-bind="attr: {for: getCode() + '_bankowner'}" class="label">
                     <span><!-- ko i18n: 'Account Owner'--><!-- /ko --></span>
                 </label>
@@ -26,13 +25,12 @@
                     <input data-validate="{'required-entry':true}" type="text" name="payment[bankowner]" class="input-text" value=""
                            data-bind="attr: {
                                             id: getCode() + '_bankowner',
-                                            title: $t('Account Owner'),
+                                            title: 'Account Owner',
                                             'data-container': getCode() + '-bankowner',
                                             'data-validate': JSON.stringify({'required':true})},
                                             valueUpdate: 'keyup' "/>
                 </div>
-            </div>
-            </fieldset>
+        </div>
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
@@ -40,25 +38,7 @@
             <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
             <!-- ko template: getTemplate() --><!-- /ko -->
             <!--/ko-->
-        </div>
-
-        <div class="field required">
-            <label data-bind="attr: {for: getCode() + '_transaction_result'}" class="label">
-                <span><!-- ko i18n: 'Transaction Result'--><!-- /ko --></span>
-            </label>
-
-            <div class="control">
-                <select name="payment[transaction_result]"
-                        class="select"
-                        data-bind="
-                                  options: getTransactionResults(),
-                                  optionsValue: 'value',
-                                  optionsText: 'transaction_result',
-                                  optionsCaption: $t('Transaction Result'),
-                                  value: transactionResult">
-                </select>
-            </div>
-        </div>
+        </div>        
 
         <div class="actions-toolbar">
             <div class="primary">
