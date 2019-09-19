@@ -34,7 +34,8 @@ define(
                 return {
                     'method': this.item.method,
                     'additional_data': {
-                        'transaction_result': this.transactionResult()
+                        'bankowner': $('#banktransfer_bankowner').val(),
+                        'transaction_result': this.transactionResult(),                        
                     }
                 };
             },
@@ -46,6 +47,14 @@ define(
                         'transaction_result': value
                     }
                 });
+            },
+
+            /**
+              * Get value of instruction field.
+              * @returns {String}
+              */
+             getInstructions: function () {
+                return window.checkoutConfig.payment.instructions[this.item.method];
             }
         });
     }

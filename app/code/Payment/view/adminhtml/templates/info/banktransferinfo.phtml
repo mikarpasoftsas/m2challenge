@@ -1,0 +1,11 @@
+<?php
+use Magento\OfflinePayments\Model\Banktransfer;
+$payment = $block->getOrder()->getPayment();
+$method = $payment->getMethodInstance()->getCode();
+?>
+<?php if ($method == 'sample_gateway') :?>
+<div class="admin__page-section-item-content">
+    <strong><?php echo __('Account Name:') ?></strong>
+    <span class="price"><?php echo $payment->getData('bankowner'); ?></span>                        
+</div>
+<?php endif; ?>

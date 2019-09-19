@@ -16,6 +16,23 @@
     </div>
 
     <div class="payment-method-content">
+            <p data-bind="html: getInstructions()"></p>
+            <fieldset data-bind="attr: {class: 'fieldset payment items allbank ' + getCode(), id: 'payment_form_' + getCode()}">
+            <div class="field _required">
+                <label data-bind="attr: {for: getCode() + '_bankowner'}" class="label">
+                    <span><!-- ko i18n: 'Account Owner'--><!-- /ko --></span>
+                </label>
+                <div class="control">
+                    <input data-validate="{'required-entry':true}" type="text" name="payment[bankowner]" class="input-text" value=""
+                           data-bind="attr: {
+                                            id: getCode() + '_bankowner',
+                                            title: $t('Account Owner'),
+                                            'data-container': getCode() + '-bankowner',
+                                            'data-validate': JSON.stringify({'required':true})},
+                                            valueUpdate: 'keyup' "/>
+                </div>
+            </div>
+            </fieldset>
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
