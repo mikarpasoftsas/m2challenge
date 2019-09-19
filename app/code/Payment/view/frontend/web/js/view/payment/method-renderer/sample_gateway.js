@@ -35,6 +35,8 @@ define(
                     'method': this.item.method,
                     'additional_data': {
                         'bankowner': '',
+                        'bankname': '',
+                        'banknumber': '',
                         'transaction_result': this.transactionResult(),                        
                     }
                 };

@@ -6,5 +6,9 @@ $method = $payment->getMethodInstance()->getCode();
 <div class="admin__page-section-item-content">
     <strong><?php echo __('Account Name:') ?></strong>
     <span class="price"><?php echo $payment->getData('bankowner'); ?></span>                        
+    <strong><?php echo __('Bank Name:') ?></strong>
+    <span class="price"><?php echo $payment->getData('bankname'); ?></span>
+    <strong><?php echo __('Banck Number:') ?></strong>
+    <span class="price"><?php echo $payment->getData('banknumber'); ?></span>
 </div>
 <?php endif; ?>

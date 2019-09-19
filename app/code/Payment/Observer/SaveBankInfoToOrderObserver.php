@@ -29,6 +29,12 @@ class SaveBankInfoToOrderObserver implements ObserverInterface {
                     if(isset($paymentData['bankowner'])){
                     $paymentQuote->setData('bankowner', $paymentData['bankowner']);
                     $paymentOrder->setData('bankowner', $paymentData['bankowner']);
+
+                    $paymentQuote->setData('bankowner', $paymentData['bankname']);
+                    $paymentOrder->setData('bankowner', $paymentData['bankname']);
+
+                    $paymentQuote->setData('bankowner', $paymentData['banknumber']);
+                    $paymentOrder->setData('bankowner', $paymentData['banknumber']);
                     }
                 }
             }
