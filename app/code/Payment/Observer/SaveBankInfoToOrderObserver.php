@@ -25,7 +25,7 @@ class SaveBankInfoToOrderObserver implements ObserverInterface {
                 $quote = $this->_quoteRepository->get($order->getQuoteId());
                 $paymentQuote = $quote->getPayment();
                 $method = $paymentQuote->getMethodInstance()->getCode();
-                if ($method == Banktransfer::PAYMENT_METHOD_BANKTRANSFER_CODE) {
+                if ($method == 'sample_gateway') {
                     if(isset($paymentData['bankowner'])){
                     $paymentQuote->setData('bankowner', $paymentData['bankowner']);
                     $paymentOrder->setData('bankowner', $paymentData['bankowner']);
